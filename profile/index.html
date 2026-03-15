@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to Profile...</title>
+    <script>
+        window.onload = function() {
+            // Формируем ссылку для профиля
+            const deepLink = "medallistboost://profile" + window.location.search;
+            window.location.href = deepLink;
+
+            setTimeout(function() {
+                document.body.innerHTML = "<h3>Если приложение не открылось, <a href='" + deepLink + "'>нажмите здесь</a></h3>";
+            }, 2000);
+        };
+    </script>
+</head>
+<body>
+    <p>Переходим в профиль Medallist VPN...</p>
+</body>
+</html>
