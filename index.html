@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to Medallist BOOST...</title>
+    <script>
+        window.onload = function() {
+            // Берем все параметры из текущей ссылки (id, hash и т.д.)
+            const urlParams = window.location.search;
+            // Формируем глубокую ссылку для вашего приложения
+            const deepLink = "medallistboost://auth" + urlParams;
+            
+            // Пытаемся открыть приложение
+            window.location.href = deepLink;
+
+            // Если через 2 секунды приложение не открылось (не установлено),
+            // можно отправить пользователя в Google Play (опционально)
+            setTimeout(function() {
+                // window.location.href = "https://play.google.com";
+                document.body.innerHTML = "<h3>Если приложение не открылось, <a href='" + deepLink + "'>нажмите здесь</a></h3>";
+            }, 2000);
+        };
+    </script>
+</head>
+<body>
+    <p>Переходим в приложение Medallist BOOST...</p>
+</body>
+</html>
